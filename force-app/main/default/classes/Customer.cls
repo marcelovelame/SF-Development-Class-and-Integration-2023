@@ -9,7 +9,7 @@ public virtual class Customer {
 
     public Decimal amount;
     protected Double descount;
-    Integer 
+     
     String name;
     String status;
     CustomerType type;
@@ -28,7 +28,7 @@ public virtual class Customer {
 
     //agrupamento
     Map<String, List<Contact>> contactsByRegion = new Map<String, List<Contact>> {
-        'SP' => new List<Contact> { new Conntact ( FirstName = 'Vela' ) }
+        'SP' => new List<Contact> { new Contact ( FirstName = 'Vela' ) }
         , 'SP' => new List<Contact> { new Contact ( FirstName = 'Velame' ) }
     };
 
