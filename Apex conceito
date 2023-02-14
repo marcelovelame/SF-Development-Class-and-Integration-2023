@@ -1,0 +1,14 @@
+- Apex 95% JAVA
+- OO
+
+
+- Tudo é Objeto
+- Generics (Limitado)
+- Enum (Limitada)
+- Não tem Package / NAMESPACE
+- Polimorfismo
+        - extends  
+        - abstract
+        - interface
+        - retorno vocariante
+        - metodo tipados com generics
