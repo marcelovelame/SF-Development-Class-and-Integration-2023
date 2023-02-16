@@ -12,3 +12,5 @@
         - interface
         - retorno vocariante
         - metodo tipados com generics
+
+- retorno covariante

@@ -1,14 +1,13 @@
+AccountRepository repository = new AccountRepository();
 
-List<Account> accounts = new AccountRepository().findByName('%Velame%') {
+List<Account> accounts = new AccountRepository().findByName('%Velame%');
         
     for (Account account : accounts) {
         account.BillingState = 'SP';
     }
+	
+    repository.store (accounts);
 
-};
-
-    AccountRepository repository = new AccountRepository();
-
-    repository.create(accounts);
+    repository.store(accounts);
 
     System.debug (JSON.serialize (accounts));
