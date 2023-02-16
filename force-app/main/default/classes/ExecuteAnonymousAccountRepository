@@ -8,7 +8,6 @@ System.debug (JSON.serialize (
 
 List<Account> accounts = new List<Account> {
         
-        for(Account acc : )
         new Account (Name = 'Velame 06'),
         new Account (Name = 'Velame 07'),
         new Account (Name = 'Velame 08'),
