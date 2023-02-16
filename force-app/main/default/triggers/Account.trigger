@@ -11,17 +11,12 @@ trigger Account on Account (before insert, before update, before delete, after i
     Map<Id, Account> oldAccounts = (Map<Id, Account>) Trigger.oldMap;
 
     Account account = newAccounts.get(0);
-<<<<<<< HEAD
+
     if (oldAccounts.containsKey(account.Id)) {
         Account oldAccount = oldAccounts.get(account.Id);
     }
  
-=======
-    if(oldAccounts.containsKey(account.Id)) {
-        Account oldAccount = oldAccounts.get(account.Id);
-    }
 
->>>>>>> 59dde8e4b82d55b5f0313afc2865d4e513574f09
 
     System.debug('New Accounts');
 
@@ -35,17 +30,8 @@ trigger Account on Account (before insert, before update, before delete, after i
         }
 }
 
-<<<<<<< HEAD
-
-}
-
 
 //Filtro
 //Validação
 //Enriquecimento
 //Chamada Externa - Publicação
-=======
-//Filtro
-//Enriquecendo
-//
->>>>>>> 59dde8e4b82d55b5f0313afc2865d4e513574f09
