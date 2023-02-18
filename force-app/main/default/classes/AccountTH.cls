@@ -7,7 +7,7 @@
  *  - Enriquecer (Enricher)
  *  - Publicar(Publisher)
  * 
- * @author mvelame - Salesforce
+ * @author: mvelame - Salesforce
  */
 
 public virtual with sharing class AccountTH extends TriggerHandler {
@@ -15,6 +15,10 @@ public virtual with sharing class AccountTH extends TriggerHandler {
     List<Account> newAccounts; // = (List<Account> Trigger.new;
 
     Map<Id, Account> oldAccounts; //(Map<Id, Account>) Trigger.oldMap;
+
+    AccountFilter filter;
+
+    AccountValidator validator;
 
     
     public AccountTH(){
@@ -26,8 +30,25 @@ public virtual with sharing class AccountTH extends TriggerHandler {
         this.newAccounts = newAccounts;
         this.oldAccounts = oldAccounts;
 
+        this.filter = new AccountFilter();
+        this.validator = new AccountValidator();
+
     }
 
+    virtual
+    override
+    public void beforeInsert() {
+        validateDocumentNumber();
+    }
+    
+    virtual
+    override
+    public void beforeUpdate() {
+        validateDocumentNumber();
+        
+    }
+
+/**
     virtual
     override
     public void afterInsert() {
@@ -46,5 +67,16 @@ public virtual with sharing class AccountTH extends TriggerHandler {
         System.debug ( JSON.serialize(oldAccounts) );
 
     }
+ */
+
+    virtual
+    public void validateDocumentNumber () {
+            
+        List<Account> filteredAccounts = this.filter.filterByChangedDocumentNumber (newAccounts, 
+                                                                                    oldAccounts);
+        this.validator.validateDocumentNumber(filteredAccounts);
+        
+    }
+
 
 }
