@@ -5,11 +5,18 @@ public with sharing class AccountFilterTest {
     @isTest
     static void filterAccountsByDocumentNumberTest () {
 
-        List<Account> accounts = new List<Account>();
+    /**Inserçao de uma Account normalmente sem uma classe de FixtureFactory
+        * 
+        * accounts.add (new Account (Name = 'Teste 01', DocumentNumber__c = '54570553000109' ) );
+        * accounts.add (new Account (Name = 'Teste 02', DocumentNumber__c = '42364324000159' ) );
+        * insert accounts;
+        * 
+        */
 
-        accounts.add (new Account (Name = 'Teste 01', DocumentNumber__c = '54570553000109' ) );
-        accounts.add (new Account (Name = 'Teste 02', DocumentNumber__c = '42364324000159' ) );
-        insert accounts;
+        //Criação de uma Account chamando uma classe FixtureFactory, no exemplo AccountFixtureFactory
+        List<Account> accounts = new List<Account> { 
+            AccountFixtureFactory.createAccount( 'Teste 01', '42364324000159' )
+        };
 
         AccountFilter filter = new AccountFilter();
 
