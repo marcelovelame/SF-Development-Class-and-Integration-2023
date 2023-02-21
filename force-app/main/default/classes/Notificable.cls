@@ -1,3 +1,6 @@
+/**
+* @author: mvelame - Salesforce
+*/
 
 public interface Notificable {
 

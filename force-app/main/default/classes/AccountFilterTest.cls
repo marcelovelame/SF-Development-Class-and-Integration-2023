@@ -1,9 +1,20 @@
+/**
+* @author: mvelame - Salesforce
+*/
+
 @isTest
 public with sharing class AccountFilterTest {
 
     //BDD given When Then
     @isTest
     static void filterAccountsByDocumentNumberTest () {
+
+    Map<String, SObject> records = AccountFixtureFactory.createIntegratedScenario ();
+
+    List<Account> accounts = new List<Account> { 
+        (Account) records.get ('account')
+    };
+
 
     /**Inserçao de uma Account normalmente sem uma classe de FixtureFactory
         * 
@@ -14,9 +25,10 @@ public with sharing class AccountFilterTest {
         */
 
         //Criação de uma Account chamando uma classe FixtureFactory, no exemplo AccountFixtureFactory
-        List<Account> accounts = new List<Account> { 
+        /**List<Account> accounts = new List<Account> { 
             AccountFixtureFactory.createAccount( 'Teste 01', '42364324000159' )
         };
+        */
 
         AccountFilter filter = new AccountFilter();
 

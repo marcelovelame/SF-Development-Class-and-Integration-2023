@@ -1,3 +1,7 @@
+/**
+@author mvelame - Salesforce
+ */
+
 public class AccountValidator {
     
     public List<Account> validateDocumentNumber (List<Account> accounts) {

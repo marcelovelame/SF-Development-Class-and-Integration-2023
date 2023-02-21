@@ -1,5 +1,5 @@
 /**
-*
+* @author: mvelame - Salesforce
 */
 
 public with sharing class AccountFilter {

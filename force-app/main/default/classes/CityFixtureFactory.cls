@@ -28,22 +28,17 @@ public class CityFixtureFactory {
                              CityName__c = city );
     }
 
-    public static City__c createCity () {
+    public static City__c createCity ( String ibge, String city ) {
         
-        return createCity ( newCity() );
-
-    }
-    
-    public static City__c createCity ( String ibge, String city ) {
-
         return createCity ( newCity ( ibge, city ) );
-    }
-    
-    public static City__c createCity ( String ibge, String city ) {
 
-        return createCity ( newCity ( ibge, city ) );
     }
-    
+
+    public static City__c createCity () {
+
+        return createCity ( newCity () );
+    }
+   
     public static City__c createCity ( City__c city ) {
         insert city;
         return city; 

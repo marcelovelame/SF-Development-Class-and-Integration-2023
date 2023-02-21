@@ -1,4 +1,6 @@
 /**
+ * @author: mvelame - Salesforce
+ * 
  * Classe Trigger Handler não pode ser grande!!!
  * A classe triggre handler delega.
  * 
@@ -7,7 +9,6 @@
  *  - Enriquecer (Enricher)
  *  - Publicar(Publisher)
  * 
- * @author: mvelame - Salesforce
  */
 
 public virtual with sharing class AccountTH extends TriggerHandler {

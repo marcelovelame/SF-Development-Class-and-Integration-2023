@@ -1,4 +1,6 @@
 /**
+ * @author mvelame - Salesforce
+ * 
  * https://github.com/kevinohara80/sfdc-trigger-framework
  */
 

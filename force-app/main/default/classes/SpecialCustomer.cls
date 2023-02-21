@@ -1,12 +1,12 @@
-/** 
+/**
+ * 
+ * @author: mvelame - Salesforce
  * Customer
  *    ^
  * SpecialCustomer
  *      ^
  * MegaSpecialCustomer
 */
-
-
 
 public virtual class SpecialCustomer extends Customer implements Notificable {
    
@@ -24,6 +24,5 @@ public virtual class SpecialCustomer extends Customer implements Notificable {
     public void notify () {
 
     }
-
 
 }

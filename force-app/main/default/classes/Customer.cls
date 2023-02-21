@@ -1,3 +1,6 @@
+/**
+@author mvelame - Salesforce
+ */
 // NomeDaClasse
 
 // <public | private | global> [modificadores] Class <NomeDaClasse> {
