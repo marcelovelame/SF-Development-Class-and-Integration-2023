@@ -3,8 +3,23 @@
  */
 
 public with sharing class GetAddressOutbounService {
+
+    ZipCodeAddressTransformer transformer;
+
+    public GetAddressOutbounService () {
+        transformer = new ZipCodeAddressTransformer();
+    }
+
+
+
+    public ZipCodeAddress findAddress(String zipCode) {
+
+        return transformer.toAddress ( findViaCepAddress(zipCode) );
+
+
+    }
    
-    public ViaCepAddressResponse findAddress ( String zipCode ) {
+    private ViaCepAddressResponse findViaCepAddress ( String zipCode ) {
 
         HttpRequest request = new HttpRequest();
         request.setEndpoint('https://viacep.com.br/ws/' + zipCode + '/json');
@@ -14,11 +29,15 @@ public with sharing class GetAddressOutbounService {
         HttpResponse response = http.send(request);
 
         String payload = response.getBody();
+
         System.debug('Status -----' + response.getStatus());
         System.debug('Status Code -----' + response.getStatusCode());
+
         System.debug(payload);
 
-
+        if (response.getStatusCode() >= 400) {
+            throw new CalloutException ('service unavailable');
+        }
 
         return ( ViaCepAddressResponse ) JSON.deserialize(payload, ViaCepAddressResponse.class);
         
