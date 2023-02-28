@@ -1,3 +1,7 @@
+/**
+ * @author: mvelame - Salesforce
+ */
+
 global class AgileProject {
     
     public String externalId;

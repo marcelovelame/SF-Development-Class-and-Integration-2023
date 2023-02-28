@@ -2,7 +2,6 @@
  * @author: mvelame - Salesforce
  */
 
- 
 public virtual with sharing class ProjectRepository {
 
     virtual

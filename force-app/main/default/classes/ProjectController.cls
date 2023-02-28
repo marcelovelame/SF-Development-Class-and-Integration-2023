@@ -2,7 +2,7 @@
  * @author: mvelame - Salesforce
  */
 
-@RestResource(urlMapping = '/api/modulo/project/')
+@RestResource(urlMapping = '/api/project/')
 
 global with sharing class ProjectController {
     
