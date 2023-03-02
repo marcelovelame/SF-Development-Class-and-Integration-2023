@@ -43,22 +43,26 @@ global with sharing class ProjectController {
         
     }
 
-    public class ProjectException extends Exception {}
+        public class ProjectException extends Exception {}
 
-    global class ProjectBusinessError {
+        global class ProjectBusinessError {
 
-        String code;
-        String message;
+            String code;
+            String message;
         
-
         public ProjectBusinessError (String code, String message) {
+        
             this.code = code;
             this.message = message;
-        }
-    }
-    override
-    public String toString () {
-        return JSON.serialize(this);
+
         }
 
+        override
+        public String toString () {
+       
+            return JSON.serialize(this);  
+
+        }
+    }
 }
+    
