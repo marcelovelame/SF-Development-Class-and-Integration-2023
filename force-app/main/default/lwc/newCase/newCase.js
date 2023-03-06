@@ -5,6 +5,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
  * @author: mvelame - Salesforce
  */
 
+
 export default class NewCase extends LightningElement {
 
     handleSuccess () {
