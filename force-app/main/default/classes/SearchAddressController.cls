@@ -1,11 +1,19 @@
 public with sharing class SearchAddressController {
     
-    
-    @AuraEnabled
-    public static ZipCodeAddress searchAddress (String zipCode) {
-
+    @AuraEnabled(cacheable=true)
+    public static ZipCodeAddress searchAddress(String zipCode) {
         GetAddressOutbounService service = new GetAddressOutbounService();
 
-        return service.findAddress(zipCode);
-    }
+        ZipCodeAddress address;
+
+        try{
+            address = service.findAddress(zipCode);
+        } catch (Exception e ) {
+            throw new AuraException (e.getMessage()); 
+        }
+        
+        return address;
+        
+    }      
+    
 }

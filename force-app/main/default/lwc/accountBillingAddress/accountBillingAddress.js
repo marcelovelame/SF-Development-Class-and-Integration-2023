@@ -29,6 +29,11 @@ export default class AccountBillingAddress extends LightningElement {
 
     }
 
+    handleChangedAddress (event) {
+        this.billingAddress = event.detail;
+        console.log('billingAddress changed');
+    }
+
 
 
 
