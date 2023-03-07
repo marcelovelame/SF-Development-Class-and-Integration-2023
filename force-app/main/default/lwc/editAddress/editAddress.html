@@ -1,0 +1,52 @@
+<!--
+    @author: mvelame - Salesforce
+-->
+
+<template>
+
+    <div class="slds-grid slds-wrap">
+
+        <div class="slds-col slds-size_2-of-3">
+            <c-search-zipcode 
+                zip-code={address.zipCode}
+                onsearchedaddress={handleSearchedAddress}>
+            </c-search-zipcode>
+        </div>
+                
+        <div class="slds-col slds-size_3-of-3">
+            <lightning-input label="Endereço" name="address" type ="text"  value={address.street} 
+                max-length="255">
+            </lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_1-of-3 slds-p-right_small">
+            <lightning-input label="Número" name="streetNumber" type="text" max-length="20" 
+                value={address.streetNumber}
+                required>
+            </lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-input label="Complemento" name="additionalInfo" 
+                value={address.additionalInfo}
+                type="text" max-length="255">
+            </lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_2-of-3 slds-p-right_small">
+            <lightning-input label="Cidade" name="city" 
+                value={address.city}
+                type="text" max-length="255" required>
+            </lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_1-of-3">
+            <lightning-input label="Estado" name="state" 
+                value={address.state}
+                type="text" max-length="255" required>
+            </lightning-input>
+        </div>
+
+    </div>
+    
+</template>
